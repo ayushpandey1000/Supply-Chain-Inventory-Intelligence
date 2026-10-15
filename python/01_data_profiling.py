@@ -1,0 +1,11 @@
+import pandas as pd
+df=pd.read_csv( "data/DataCoSupplyChainDataset.csv",encoding="latin1")
+print("Dataset Shape",df.shape)
+print("Coulumns Name",df.columns.tolist())
+print("Datatypes",df.dtypes)
+print("Missing value",df.isnull().sum().sort_values(ascending=False).head(15))
+print("Duplicated Row",df.duplicated().sum())
+print("Numerical Summary",df.describe().round(2))
+print(df["Delivery Status"].value_counts())
+print(df["Order Status"].value_counts())
+print(df["Shipping Mode"].value_counts())
